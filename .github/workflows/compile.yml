@@ -3,7 +3,7 @@ name: 'Compile SCSS'
 on:
   push:
     branches:
-      - master
+      - testing
 
 jobs:
   build:

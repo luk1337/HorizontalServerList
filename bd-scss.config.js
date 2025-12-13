@@ -8,6 +8,6 @@ export default {
 		source: 'https://github.com/DiscordStyles/HorizontalServerList',
 		invite: 'ZHthyCw',
 	},
-	github: 'DiscordStyles',
+	github: 'luk1337',
 	addons: [{ target: 'src/addons/_bottomhsl.scss' }],
 };
