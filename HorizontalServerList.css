@@ -8,6 +8,10 @@
   overflow: visible !important;
 }
 
+:fullscreen .content__5e434 {
+  margin: 0 !important;
+}
+
 #app-mount .sidebar__5e434 {
   border-radius: 0;
   overflow: visible !important;
@@ -25,6 +29,9 @@
 }
 #app-mount .wrapper_cc5dd2 {
   rotate: 90deg;
+}
+#app-mount .icon__6e9f8 {
+  rotate: -90deg;
 }
 #app-mount .itemsContainer_ef3116,
 #app-mount .stack_dbd263 {
