@@ -10,7 +10,7 @@ export default {
 	},
 	static: true,
 	github: {
-		profile: 'DiscordStyles',
+		profile: 'luk1337',
 	},
 	addons: [{ target: 'src/addons/bottomhsl.css' }],
 };
