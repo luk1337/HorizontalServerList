@@ -1,0 +1,88 @@
+/**
+ * @name Horizontal Server List
+ * @author Gibbu
+ * @version 3.0.0
+ * @description Moves the server list from the left to the top of Discord.
+ * @source https://github.com/DiscordStyles/HorizontalServerList
+ * @invite ZHthyCw
+ */
+
+/* Bottom HorizontalServerList. Simply remove the comments surrounding the @import to enable it. */
+/* @import url("https://discordstyles.github.io/HorizontalServerList/bottomhsl.css"); */
+
+:root {
+	--HSL-server-direction: column; /* Direction of the server list. | OPTIONS: column, column-reverse | DEFAULT: column */
+	--HSL-server-alignment: flex-start; /* Alignment of the server list. | OPTIONS: flex-start, center, flex-end | DEFAULT: flex-start */
+}
+
+/* --- src/main.css --- */
+:root {
+  --notices-height: 36px;
+  --serverlist-offset: var(--custom-guild-list-width);
+}
+
+.base_pog62O[data-fullscreen="false"] .content_pog62O {
+  margin-top: var(--serverlist-offset);
+  overflow: visible !important;
+}
+
+:fullscreen .content_pog62O {
+  margin: 0 !important;
+}
+
+.sidebar_pog62O {
+  border-radius: 0;
+  overflow: visible !important;
+}
+
+.guilds_pog62O {
+  transform-origin: 0 0;
+  bottom: unset;
+  left: 0;
+  rotate: -90deg;
+  height: 100vw !important;
+  position: absolute !important;
+
+  & .stack_TWWX0S {
+    flex-direction: var(--HSL-server-direction);
+    justify-content: var(--HSL-server-alignment);
+  }
+}
+
+.tree_5dqHTG {
+  padding-top: var(--HSL-top-padding, var(--size-sm));
+  justify-content: var(--HSL-server-alignment);
+}
+
+.wrapper_JJ-hgR, .folderPreview_RTMSuZ, .folderIconWrapper_RTMSuZ, .lowerBadge_hqZPsU, .upperBadge_hqZPsU {
+  rotate: 90deg;
+}
+
+.childWrapper_JJ-hgR {
+  rotate: 0deg;
+}
+
+[class^="notice_"] {
+  height: var(--notices-height);
+
+  & + .content_pog62O {
+    --serverlist-offset: calc(var(--notices-height) + var(--custom-guild-list-width));
+  }
+}
+
+.container_pog62O > div[style]:not(.base_pog62O) {
+  top: calc(var(--serverlist-offset) + var(--custom-app-top-bar-height));
+  pointer-events: none;
+  z-index: 1;
+  position: absolute;
+  width: 100vw !important;
+  height: var(--serverlist-offset) !important;
+
+  & .guilds_pog62O {
+    pointer-events: all;
+  }
+
+  & + .base_pog62O .content_pog62O {
+    margin-top: calc(var(--serverlist-offset) * 2);
+  }
+}
